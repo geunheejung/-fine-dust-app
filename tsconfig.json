@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "module": "esNext",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react-native",
+    "lib": ["dom", "es2015", "es2016", "es2017"],
+    "moduleResolution": "node",
+    "noEmit": true,
+    "strict": true,
+    "target": "esnext",
+    "sourceMap": true,
+    "sourceRoot": "src",
+    "experimentalDecorators": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "noImplicitReturns": false,
+    "noUnusedLocals": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["src/*"],
+      "@assets/*": ["assets/*"],
+      "@screens/*": ["./src/screens/*"],
+      "@navigators/*": ["./src/navigators/*"],
+      "@config/*": ["./src/config/*"],
+      "@components/*": ["./src/components/*"],
+      "@redux/*": ["./src/redux/*"],
+      "@sagas/*": ["./src/sagas/*"],
+      "@shared/*": ["./shared/*"],      
+    }
+  },
+  "exclude": [
+    "build",
+    "static",
+    "node_modules"
+  ]
+}

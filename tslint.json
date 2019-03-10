@@ -1,0 +1,35 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "jsRules": {},
+  "rules": {
+    "max-line-length": {
+      "options": [180]
+    },
+    "linebreak-style": [true, "LF"],
+    "no-any": false,
+    "quotemark": [true, "single", "jsx-double"],
+    "indent": [true, "spaces", 2],
+    "semicolon": [true, "always", "ignore-interfaces"],
+    "trailing-comma": [true, { "singleline": "never" }],
+    "object-literal-sort-keys": false,
+    "interface-name": false,
+    "member-ordering": [true, { "order": "statics-first" }],
+    "no-empty": [false],
+    "arrow-parens": false,
+    "no-console": false,
+    "interface-over-type-literal": false,
+    "member-access": false,
+    "ordered-imports": false,
+    "origin-ordered-imports": [ true, "no-blank-lines" ],
+    "import-blacklist": [true, "lodash"],
+    "class-name": true,
+    "variable-name": [true, "allow-snake-case", "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
+    "max-classes-per-file": false,
+    "curly": false,
+    "no-shadowed-variable": false
+  },
+  "rulesDirectory": [
+    "node_modules/tslint-origin-ordered-imports-rule/dist"
+  ]
+}

@@ -7,18 +7,25 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@types/react-redux": "^7.0.3",
+    "axios": "^0.18.0",
     "expo": "^32.0.0",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-router-flux": "^4.0.6",
+    "react-redux": "^6.0.1",
     "reactjs-component-generator": "^1.3.3",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.2",
     "typescript": "^3.3.3333"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.7.2",
     "@types/expo": "^32.0.6",
     "@types/react": "^16.8.7",
     "@types/react-native": "^0.57.38",
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "^5.0.0",
+    "immer": "^2.1.1"
   },
   "private": true
 }

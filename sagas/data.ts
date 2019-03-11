@@ -12,7 +12,6 @@ function* workFetchFineDust(action: object) {
 }
 
 /******** watch Saga ********/
-
 function* watchFetchFineDust() {
   while (true) {
     try {
@@ -24,4 +23,4 @@ function* watchFetchFineDust() {
   }
 }
 
-export default watchFetchFineDust;
+export default [watchFetchFineDust];

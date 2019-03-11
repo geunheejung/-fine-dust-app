@@ -1,4 +1,5 @@
 import produce from 'immer';
+import { createSelector } from 'reselector';
 
 // Action Type
 export enum ACTION_TYPE {
@@ -9,16 +10,16 @@ export enum ACTION_TYPE {
 // Action Creatoer
 // (type: ACTION_TYPE, payload?: {} | string) => ({ type: ACTION_TYPE, payload?: string | object | undefined }) 
 // ACTION_TYPE에 속한 type들만 허용해야하며, 정해진 PO를 반환한다.
-type TActionObject<T> = {
+type TActionObject = {
   type: ACTION_TYPE,
-  payload: T | object,  
+  payload: object,  
 }
 
 // type과 payload를 받아서 request, failure, success 가 suffix에 붙는 메서드 리스트를 만든다.
 // type과 payload는 제네릭으로 받는다.
-export const fetchFineDustRequest = <T>(payload: T): TActionObject<T> => ({ type: ACTION_TYPE.FETCH_FINE_DUST_REQUEST, payload });
-export const fetchFineDustSuccess = <T>(payload: T): TActionObject<T> => ({ type: ACTION_TYPE.FETCH_FINE_DUST_SUCCESS, payload });
-export const fetchFineDustFailure = <T>(payload: T): TActionObject<T> => ({ type: ACTION_TYPE.FETCH_FINE_DUST_FAILURE, payload });
+export const fetchFineDustRequest = (payload: object): TActionObject => ({ type: ACTION_TYPE.FETCH_FINE_DUST_REQUEST, payload });
+export const fetchFineDustSuccess = (payload: object): TActionObject => ({ type: ACTION_TYPE.FETCH_FINE_DUST_SUCCESS, payload });
+export const fetchFineDustFailure = (payload: object): TActionObject => ({ type: ACTION_TYPE.FETCH_FINE_DUST_FAILURE, payload });
 // Reducer
 interface IState {
   fineDustList: object,
@@ -27,12 +28,12 @@ const initalState: IState = {
   fineDustList: {}
 }
 
-export default (state: IState = initalState, action: TActionObject<object>): IState => {
+export default (state: IState = initalState, action: TActionObject): IState => {
   const { type, payload } = action;
   return produce(state, draft => {
     switch (type) {
-      case ACTION_TYPE.FETCH_FINE_DUST_SUCCESS:
-        draft.fineDustList = payload;
+      case ACTION_TYPE.FETCH_FINE_DUST_SUCCESS:        
+        draft.fineDustList = payload;    
         break;
       default:
         return initalState;
